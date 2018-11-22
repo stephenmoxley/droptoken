@@ -20,8 +20,8 @@ public class DropToken {
 		
 		// plays moves until "EXIT" is given
 		while(!gameOver) {
-			String instruction = console.next();
-			if (instruction.equals("EXIT")) {
+			String instruction = console.next().toLowerCase();
+			if (instruction.equals("exit")) {
 				gameOver = true;
 			} else {
 				thisGame.playInstruction(instruction);
@@ -46,9 +46,15 @@ public class DropToken {
 		int[][] board;
 		List<Integer> columns;
 		boolean playerOne;
-		String[] instructions = {"GET", "PUT", "BOARD"};
+		String[] instructions = {"get", "put", "board"};
 		Scanner scanner;
 		
+		/**
+		 * Initializes a new drop token game with a size x size board
+		 * 
+		 * @param size  the size of the game board
+		 * @param scanner  the stdin scanner being used 
+		 */
 		public Game(int size, Scanner scanner) {
 			board = new int[size][size];
 			columns = new ArrayList<Integer>();
