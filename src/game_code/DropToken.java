@@ -146,7 +146,7 @@ public class DropToken {
 		 * 
 		 */
 		public void put(int column) {
-			if (column - 1 >= board.length || isBoardFull()) {
+			if (column - 1 >= board.length || isBoardFull() || board[column - 1][0] != 0) {
 				System.out.println("> ERROR");
 			} else {
 				int[] columnToPut = board[column - 1];
